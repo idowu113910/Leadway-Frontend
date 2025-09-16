@@ -21,10 +21,10 @@ const Footer = () => {
           <input
             type="text"
             placeholder="Enter your email"
-            className="pop font-normal text-[12px] text-[#585858] flex-1"
+            className="pop font-normal text-[12px] text-[#585858] flex-1 placeholder:text-left"
           />
-          <div className="bg-[#EC5B0C] rounded-[4.2px] ml-28.5 mt-0.5 px-2 h-[30px] justify-end  items-end">
-            <button className="pop font-semibold text-[12px] text-center">
+          <div className="bg-[#EC5B0C] rounded-[4.2px] ml-28.5 mt-0.5 px-2 h-[30px]">
+            <button className="pop font-semibold text-[12px] ">
               Subscribe
             </button>
           </div>
@@ -96,7 +96,7 @@ const Footer = () => {
       </div>
 
       {/* Desktop Version */}
-      <div className="hidden md:flex md:h-[300px] md:flex-row">
+      <div className="hidden md:block  md:flex md:h-[300px] md:flex-row">
         {/* Left: Image above Input */}
         <div className="md:flex md:flex-col md:w-[40%] md:items-start md:gap-6 relative mt-2">
           <img
@@ -115,17 +115,15 @@ const Footer = () => {
             <h1 className="font-semibold md:text-[20px] md:text-left md:pb-3">
               Subscribe to our newsletter
             </h1>
-            <div className="rounded-[4.2px] bg-[#FDEFE7] py-[0.42px] md:pl-[235px]  w-[320px] h-[34px] flex">
+            <div className="flex items-center w-[320px] md:w-[300px] h-[34px] rounded-[4.2px] bg-[#FDEFE7] px-2">
               <input
                 type="text"
                 placeholder="Enter your email"
-                className="pop font-normal text-[14px] text-[#585858] flex-1"
+                className="pop font-normal text-[14px] text-[#585858] flex-1 bg-transparent outline-none placeholder:text-left"
               />
-              <div className="bg-[#EC5B0C] md:my-0 rounded-[4.2px] md:mt-0.5 px-2 h-[30px] flex items-center">
-                <button className="pop font-semibold text-[14px] text-center">
-                  Subscribe
-                </button>
-              </div>
+              <button className="bg-[#EC5B0C] text-white pop font-semibold text-[14px] px-3 h-[28px] rounded-[4.2px]">
+                Subscribe
+              </button>
             </div>
           </div>
         </div>

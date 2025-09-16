@@ -9,28 +9,41 @@ import RootLayout from "./layout/RootLayout";
 import Signin from "./pages/Signin";
 import SignUp from "./pages/SignUp";
 import { Toaster } from "react-hot-toast";
+import VerifiedSuccess from "./pages/VerifiedSuccess";
+import VerifiedFailed from "./pages/VerifiedFailed";
+import Verify from "./pages/Verify";
+import { UserProvider } from "./context/UserContext";
+import Insurance from "./pages/Insurance";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Toaster position="top-center" reverseOrder={false} />
-        <Routes>
-          <Route path="/" element={<SignUp />} />
+      <UserProvider>
+        <BrowserRouter>
+          <Toaster position="top-center" reverseOrder={false} />
+          <Routes>
+            <Route path="/" element={<SignUp />} />
 
-          <Route element={<RootLayout />}>
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/contact" element={<Contact />} />
-          </Route>
+            <Route element={<RootLayout />}>
+              <Route path="/home" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/insurance" element={<Insurance />} />
+            </Route>
 
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/signin" element={<Signin />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/signin" element={<Signin />} />
 
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </BrowserRouter>
+            <Route path="/verify" element={<Verify />} />
+
+            <Route path="/verifiedsuccess" element={<VerifiedSuccess />} />
+            <Route path="/verifiedfailed" element={<VerifiedFailed />} />
+
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </BrowserRouter>
+      </UserProvider>
     </>
   );
 }

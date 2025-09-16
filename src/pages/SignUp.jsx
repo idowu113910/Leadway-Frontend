@@ -29,14 +29,11 @@ const SignUp = () => {
     }
 
     try {
-      const res = await fetch(
-        "https://leadway-backend.onrender.com/api/auth/signup",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ fullName, email, password }),
-        }
-      );
+      const res = await fetch("http://localhost:3000/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fullName, email, password }),
+      });
 
       const data = await res.json();
 
@@ -80,7 +77,7 @@ const SignUp = () => {
           <input
             placeholder="Full Name"
             type="Name"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setFullName(e.target.value)}
             className="w-full border-b border-b-[#ADADAD] outline-none text-[#000000] text-[16px] font-semibold placeholder:text-[#ADADAD] placeholder:font-medium"
           />
 
@@ -96,7 +93,7 @@ const SignUp = () => {
               type={showPassword ? "text" : "password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full border-b border-b-[#ADADAD] outline-none text-[#000000] text-[16px] font-semibold placeholder:text-[#ADADAD] placeholder:font-medium pr-10"
+              className="w-full border-b mt-1 border-b-[#ADADAD] outline-none text-[#000000] text-[16px] font-semibold placeholder:text-[#ADADAD] placeholder:font-medium pr-10"
             />
             <div
               onClick={() => setShowPassword(!showPassword)}
@@ -105,13 +102,22 @@ const SignUp = () => {
               {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
             </div>
           </div>
-          <input
-            placeholder="Repeat Password"
-            type={showPassword ? "text" : "password"}
-            value={repeatPassword}
-            onChange={(e) => setRepeatPassword(e.target.value)}
-            className="w-full border-b border-b-[#ADADAD] outline-none text-[#000000] text-[16px] font-semibold placeholder:text-[#ADADAD] placeholder:font-medium"
-          />
+
+          <div className="relative">
+            <input
+              placeholder="Repeat Password"
+              type={showPassword ? "text" : "password"}
+              value={repeatPassword}
+              onChange={(e) => setRepeatPassword(e.target.value)}
+              className="w-full border-b mt-1  border-b-[#ADADAD] outline-none text-[#000000] text-[16px] font-semibold placeholder:text-[#ADADAD] placeholder:font-medium"
+            />
+            <div
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-2 top-3 cursor-pointer text-[#969696] text-lg"
+            >
+              {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+            </div>
+          </div>
 
           {message && <p className="text-center text-red-500">{message}</p>}
 

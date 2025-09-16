@@ -541,7 +541,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="block md:hidden px-4 mt-14">
+      <div className="block md:hidden px-4 mt-10 ">
         <h2 className="pop text-center text-[25px] leading-[100%] font-bold mb-6">
           Our Leadership
         </h2>
@@ -645,7 +645,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="hidden md:block px-40 mt-12">
+      <div className="hidden md:block px-40 mt-2">
         <h2 className="text-center text-[32px] md:text-[45px] font-bold mb-10">
           Our Leadership
         </h2>

@@ -1,6 +1,101 @@
 @import "tailwindcss";
 
 #root {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
+}
+
+.pop {
+  font-family: "Poppins", sans-serif;
+}
+
+.hero-bg {
+  background-image: linear-gradient(
+      89.94deg,
+      rgba(236, 91, 12, 0.4) 55.73%,
+      rgba(0, 0, 0, 0.4) 67.19%
+    ),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("src//assets/blog2.jpg"); /* Adjust path if needed */
+  background-size: cover;
+  background-position: center;
+  animation: float 5s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    background-position: top;
+  }
+  50% {
+    background-position: center 1100px;
+  }
+}
+
+@keyframes openClose {
+  0% {
+    background-size: 0% 0%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
+
+.hero-bg2 {
+  background-image: linear-gradient(
+      89.94deg,
+      rgba(236, 91, 12, 0.4) 55.73%,
+      rgba(0, 0, 0, 0.4) 67.19%
+    ),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("src//assets//About URL.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: openClose 5s ease-in-out forwards;
+}
+
+s.form {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s;
+  width: 50px;
+  height: 50px;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 4px solid white;
+  padding: 5px;
+}
+
+.fa img {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 42.5px;
+  height: 42.5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  color: #8c52ff;
+  text-align: center;
+  font-size: 1.2em;
+  transition: all 1s;
+}
+
+.form:hover input {
+  width: 300px;
+  cursor: pointer;
+}
+
+.form:hover input {
+  display: block;
+}
+
+.form:hover .fa {
+  background-color: #8c52ff;
+  color: white;
 }

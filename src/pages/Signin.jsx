@@ -20,14 +20,11 @@ const Signin = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch(
-        "https://leadway-backend.onrender.com/api/auth/signin",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, password }),
-        }
-      );
+      const res = await fetch("http://localhost:3000/api/auth/signin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
       const data = await res.json();
 
@@ -39,10 +36,7 @@ const Signin = () => {
         // Optional: Save tokens to localStorage
         localStorage.setItem("accessToken", data.accessToken);
         localStorage.setItem("refreshToken", data.refreshToken);
-        localStorage.setItem(
-          "user",
-          JSON.stringify({ email, fullName: data.fullName || email })
-        );
+        localStorage.setItem("user", JSON.stringify(data.user));
 
         // Redirect to a protected page, e.g., dashboard
         navigate("/home");
@@ -77,7 +71,7 @@ const Signin = () => {
 
         {/* Inputs */}
         <div className="mt-8 flex flex-col gap-6">
-          <textraea
+          <input
             type="email"
             placeholder="Email Address"
             value={email}
@@ -92,7 +86,7 @@ const Signin = () => {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full border-b border-b-[#ADADAD] outline-none text-[#000000] text-[16px] font-semibold placeholder:text-[#ADADAD] placeholder:font-medium pr-10"
+              className="w-full border-b mt-1  border-b-[#ADADAD] outline-none text-[#000000] text-[16px] font-semibold placeholder:text-[#ADADAD] placeholder:font-medium pr-10"
               required
             />
             <div
