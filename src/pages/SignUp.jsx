@@ -29,11 +29,14 @@ const SignUp = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ fullName, email, password }),
-      });
+      const res = await fetch(
+        "https://leadway-backend-1.onrender.com/api/auth/signup",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ fullName, email, password }),
+        }
+      );
 
       const data = await res.json();
 
