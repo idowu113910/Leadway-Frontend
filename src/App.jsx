@@ -37,7 +37,7 @@ function App() {
 
             <Route path="/verify" element={<Verify />} />
 
-            <Route path="/verifiedsuccess/*" element={<VerifiedSuccess />} />
+            <Route path="/verifiedsuccess" element={<VerifiedSuccess />} />
             <Route path="/verifiedfailed" element={<VerifiedFailed />} />
 
             <Route path="*" element={<Error />} />
