@@ -13,6 +13,7 @@ import VerifiedSuccess from "./pages/VerifiedSuccess";
 import VerifiedFailed from "./pages/VerifiedFailed";
 import { UserProvider } from "./context/UserContext";
 import Insurance from "./pages/Insurance";
+import Verify from "./pages/Verify";
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
 
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" element={<Signin />} />
+
+            <Route path="/verify" element={<Verify />} />
 
             <Route path="/verifiedsuccess" element={<VerifiedSuccess />} />
             <Route path="/verifiedfailed" element={<VerifiedFailed />} />
