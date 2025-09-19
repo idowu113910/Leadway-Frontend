@@ -11,7 +11,6 @@ import SignUp from "./pages/SignUp";
 import { Toaster } from "react-hot-toast";
 import VerifiedSuccess from "./pages/VerifiedSuccess";
 import VerifiedFailed from "./pages/VerifiedFailed";
-import Verify from "./pages/Verify";
 import { UserProvider } from "./context/UserContext";
 import Insurance from "./pages/Insurance";
 
@@ -34,8 +33,6 @@ function App() {
 
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" element={<Signin />} />
-
-            <Route path="/verify" element={<Verify />} />
 
             <Route path="/verifiedsuccess" element={<VerifiedSuccess />} />
             <Route path="/verifiedfailed" element={<VerifiedFailed />} />
