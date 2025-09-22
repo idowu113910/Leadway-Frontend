@@ -6,7 +6,7 @@ import Contact from "./pages/ContactUs";
 import Blog from "./pages/Blog";
 import Error from "./pages/Error";
 import RootLayout from "./layout/RootLayout";
-import Signin from "./pages/Signin";
+import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import { Toaster } from "react-hot-toast";
 import VerifiedSuccess from "./pages/VerifiedSuccess";
@@ -33,7 +33,7 @@ function App() {
             </Route>
 
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/signin" element={<Signin />} />
+            <Route path="/login" element={<Login />} />
 
             <Route path="/verify" element={<Verify />} />
 

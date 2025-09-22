@@ -167,7 +167,7 @@ const SignUp = () => {
         <div className="mt-4 flex justify-center">
           <p className="text-sm md:text-[17px] font-medium text-[#969696] text-center">
             Already have an account?{" "}
-            <Link className="text-[#EA5B0C] cursor-pointer" to="/Signin">
+            <Link className="text-[#EA5B0C] cursor-pointer" to="/login">
               Sign In
             </Link>
           </p>

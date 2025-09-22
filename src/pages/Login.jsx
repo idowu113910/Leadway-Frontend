@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import lead from "../assets/lead3.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import goo from "../assets/google.png";
 import fb from "../assets/facebook.png";
 import app from "../assets/apple.png";
@@ -10,11 +10,33 @@ import { useState } from "react";
 
 const Signin = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
+
+  useEffect(() => {
+    // Check for verification success message from URL parameters
+    const urlParams = new URLSearchParams(location.search);
+    const verified = urlParams.get("verified");
+    const emailFromUrl = urlParams.get("email");
+    const error = urlParams.get("error");
+
+    if (verified === "true") {
+      setMessage(`${emailFromUrl} verified successfully! You can now login.`);
+      setMessageType("success");
+      // Pre-fill email field if available
+      if (emailFromUrl) {
+        setEmail(emailFromUrl);
+      }
+    } else if (error === "invalid_token") {
+      setMessage("Verification failed. Invalid or expired token.");
+      setMessageType("error");
+    }
+  }, [location]);
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -100,7 +122,18 @@ const Signin = () => {
             </div>
           </div>
 
-          {message && <p className="text-center text-red-500">{message}</p>}
+          {/* Message Display */}
+          {message && (
+            <p
+              className={`text-center font-medium ${
+                messageType === "success"
+                  ? "text-green-600 bg-green-50 py-2 px-4 rounded-md border border-green-200"
+                  : "text-red-500"
+              }`}
+            >
+              {message}
+            </p>
+          )}
 
           {/* Button */}
           <button
