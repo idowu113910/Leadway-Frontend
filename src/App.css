@@ -17,7 +17,7 @@
     ),
     linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("src//assets/blog2.jpg"); /* Adjust path if needed */
+    url("/blog2.jpg"); /* Adjust path if needed */
   background-size: cover;
   background-position: center;
   animation: float 5s ease-in-out infinite alternate;
@@ -50,7 +50,7 @@
     ),
     linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("src//assets//About URL.jpg");
+    url("/About URL.jpg");
   background-repeat: no-repeat;
   background-position: center;
   animation: openClose 5s ease-in-out forwards;

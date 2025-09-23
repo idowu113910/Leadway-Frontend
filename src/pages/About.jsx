@@ -1,5 +1,4 @@
 import React from "react";
-import abt from "../assets/About URL.jpg";
 import meet from "../assets/meeting img.jpg";
 import first from "../assets/first guy.png";
 import second from "../assets/second.png";

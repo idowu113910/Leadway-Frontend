@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import bloggg from "../assets/blog2.jpg";
 import search from "../assets/search-normal blog.png";
 import { useState } from "react";
 import car from "../assets/car blog.jpg";
