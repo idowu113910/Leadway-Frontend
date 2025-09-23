@@ -9,11 +9,10 @@ import RootLayout from "./layout/RootLayout";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import { Toaster } from "react-hot-toast";
-import VerifiedSuccess from "./pages/VerifiedSuccess";
-import VerifiedFailed from "./pages/VerifiedFailed";
 import { UserProvider } from "./context/UserContext";
 import Insurance from "./pages/Insurance";
 import Verify from "./pages/Verify";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 function App() {
   return (
@@ -23,22 +22,53 @@ function App() {
           <Toaster position="top-center" reverseOrder={false} />
           <Routes>
             <Route path="/" element={<SignUp />} />
-
-            <Route element={<RootLayout />}>
-              <Route path="/home" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/insurance" element={<Insurance />} />
-            </Route>
-
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
 
             <Route path="/verify" element={<Verify />} />
 
-            <Route path="/verifiedsuccess" element={<VerifiedSuccess />} />
-            <Route path="/verifiedfailed" element={<VerifiedFailed />} />
+            <Route element={<RootLayout />}>
+              <Route
+                path="/home"
+                element={
+                  <ProtectedRoute>
+                    <Home />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/about"
+                element={
+                  <ProtectedRoute>
+                    <About />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/blog"
+                element={
+                  <ProtectedRoute>
+                    <Blog />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/contact"
+                element={
+                  <ProtectedRoute>
+                    <Contact />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/insurance"
+                element={
+                  <ProtectedRoute>
+                    <Insurance />
+                  </ProtectedRoute>
+                }
+              />
+            </Route>
 
             <Route path="*" element={<Error />} />
           </Routes>
