@@ -25,7 +25,7 @@ const NavBar = () => {
         <img src={lead} alt="Leadway Logo" className="w-28 md:w-36" />
 
         {/* Desktop Nav Links (centered) */}
-        <div className="relative hidden md:flex flex-1 justify-center items-center gap-4 mr-6">
+        <div className="relative hidden md:flex flex-1 justify-center items-center gap-8 mr-6">
           <Link
             to="/home"
             className="hover:text-[#EA5B0C] flex items-center gap-1.5 font-medium text-[20px]"
